@@ -1,0 +1,82 @@
+ /* CSS Styles */
+    /* Define the transition for smooth color change */
+    .svg_close path,
+    .svg_arrow_jump polygon,
+    .svg_email_icon path,
+    .svg_light_icon path,
+    .svg_dark_icon path,
+    .svg_profil_icon path {
+        transition: fill 0.2s ease; /* Assuming you want to change fill color */
+    }
+
+    /* Hover effect for icons (only for desktop) */
+    @media (min-width: 768px) {
+    		.close_icon:hover .svg_close path,
+        .footer-nav-link.icon:hover .svg_arrow_jump polygon,
+        .footer_link:hover .svg_email_icon path,
+        .footer_link:hover .svg_xing_icon path,
+        .link-icon.email:hover .svg_email_icon path,
+        .theme-icon:hover .svg_light_icon path,
+        .theme-icon:hover .svg_dark_icon path,
+        .link-icon.profil:hover .svg_profil_icon path {
+            fill: var(--nav--links-icon-hover);
+        }
+    }
+     
+    /* Hover effect for button icons (only for desktop) */
+    @media (min-width: 768px) {
+    		.button-back:hover .svg_default,
+    		.button-next:hover .svg_default,
+        .button_large:hover .svg_default {
+            display: none;
+        }
+        .button-back:hover .svg,
+        .button-next:hover .svg,
+        .button_large:hover .svg {
+            display: block;
+        }
+    }
+    
+    .animate-slide-up {
+      opacity: 0; /* Initial opacity set for the sliding elements */
+      transform: translateY(5rem); /* Initial position */
+      transition: opacity 1s ease, transform 1s ease; /* Animation transition */
+      transition-delay: 1s; /* Delay the start of the animation by 0.5 seconds */
+    }
+
+    .animate-scale-up {
+      opacity: 0; /* Initial opacity set for the scaling elements */
+      transform: scale(0.8); /* Initial scale */
+      transition: opacity 1s ease, transform 1s ease; /* Animation transition */
+      transition-delay: 0.3s; /* Delay the start of the animation by 0.5 seconds */
+    }
+
+    .animate-slide-up.animate-show,
+    .animate-scale-up.animate-show {
+      opacity: 1; /* Change opacity to 1 when the animation is triggered */
+    }
+
+    .animate-slide-up.animate-show {
+      transform: translateY(0);
+    }
+
+    .animate-scale-up.animate-show {
+      transform: scale(1);
+    }
+
+   
+    @keyframes scale-loop {
+    0% {
+      transform: scale(0.3);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.3);
+    }
+  }
+
+  .nav-bubble_outline {
+    animation: scale-loop 2s infinite; /* Adjust duration as needed */
+  }
